@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="En Elizabeth Makeup ofrecemos un servicio integral para eventos que va desde makeup,uñas esculpidas,
+                lifting de pestañas, alisado de cejas y otros.Ofrecemos los mejores precios del mercado y con profesionales altamente calificados."
+    />
+    <meta
+      name="keywords"
+      content="MAKEUP,MAQUILLAJE,UÑAS ESCULPIDAS,PESTAÑAS,PEINADOS,CEJAS,MAKEUP ARTISITICO,CASAMIENTO,SOCIAL"
+    />
+    <link rel="shortcut icon" href="images/logodiaz.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allison&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://marrio-h.github.io/universal-parallax/dist/universal-parallax.min.js"></script>
+    <link rel="stylesheet" href="css/estilo.css" />
+    <title>GringaStore Indumentaria</title>
+  </head>
+
+  <body>
+    <div class="parallaxStars">
+      <!--Menu-->
+      <header>
+        <nav class="navbar navbar-expand-sm">
+          <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand ms-3" href="index.html">
+              <img
+                src="images/logogringa.png"
+                alt="logo"
+                class="logo__img--center wow animate__animated animate__flipInX"
+              />
+            </a>
+
+            <!-- Boton Hamburguesa -->
+            <button
+              class="
+                navbar-toggler
+                custom-toggler
+                me-4
+                wow
+                animate__animated animate__bounceInDown
+              "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu listado de opciones -->
+            <div class="collapse navbar-collapse pe-5" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="
+                      nav-link
+                      fst-italic
+                      menuSecciones
+                      wow
+                      animate__animated animate__bounceInDown
+                    "
+                    href="index.html"
+                    data-wow-delay="0.2s"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="
+                      nav-link
+                      fst-italic
+                      menuSecciones
+                      wow
+                      animate__animated animate__bounceInDown
+                    "
+                    href="html/nosotros.html"
+                    data-wow-delay="0.3s"
+                  >
+                    Nosotros
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="
+                      nav-link
+                      fst-italic
+                      menuSecciones
+                      wow
+                      animate__animated animate__bounceInDown
+                    "
+                    href="html/servicios.html"
+                    data-wow-delay="0.4s"
+                  >
+                    Indumentaria
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="
+                      nav-link
+                      fst-italic
+                      menuSecciones
+                      wow
+                      animate__animated animate__bounceInDown
+                    "
+                    href="html/galeria.html"
+                    data-wow-delay="0.5s"
+                  >
+                    Accesorios
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="
+                      nav-link
+                      fst-italic
+                      menuSecciones
+                      wow
+                      animate__animated animate__bounceInDown
+                    "
+                    href="html/contacto.html"
+                    data-wow-delay="0.6s"
+                  >
+                    Contacto
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- container -->
+        </nav>
+      </header>
+
+      <!-- Estrellas parallax -->
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+      <div
+        class="
+          display-3
+          fw-bold
+          title
+          wow
+          animate__animated animate__backInDown
+        "
+        data-wow-delay="0.5s"
+        data-wow-iteration="1"
+      >
+        Indumentaria <br />
+        y Accesorios de tendencia
+      </div>
+    </div>
+
+    <main>
+      <div class="contenidoPrincipal">
+        <!-- Parrafo Maquillaje -->
+        <section class="m-3 p-4">
+          <h1
+            class="
+              text-uppercase text-center
+              pb-3
+              wow
+              animate__animated animate__fadeInUp
+            "
+          >
+            Vestimenta
+          </h1>
+          <div
+            class="text-start wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <p>
+              No solo permite cubrir el cuerpo para que el frío del invierno no
+              lo afecte sino que también en el plano estético le reportará a la
+              persona placer, especialmente si se trata de alguien fanático de
+              la moda y del buen parecido físico.
+            </p>
+            <p>
+              la indumentaria ya no es tan importante como protección o
+              diferenciación social sino como una especie de obra de arte en sí
+              misma en la que diseñadores y artistas se unen para darle forma, y
+              hay un público consumidor ávido por adquirirla porque la misma los
+              ubica dentro del grupo que viste de acuerdo a la moda y las
+              tendencias que se usan, hecho que reporta reconocimiento y
+              valoración positiva en algunos contextos.
+            </p>
+          </div>
+        </section>
+
+        <!-- Texto sobre imagen 1 -->
+        <!-- <section class="altoParallax">
+          <div class="cont container--full">
+            <div class="content display-3 fw-bold shimmer">
+              Makeup <br />
+              Style Design
+            </div>
+          </div>
+          <div class="parallax img-fluid indexFoto1"></div>
+        </section> -->
+
+        <!-- INICIO CAROUSEL -->
+        <section class="home">
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-controls">
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carousel"
+                  data-slide-to="0"
+                  class="active"
+                  style="background-image: url('img/slide-1.jpg')"
+                ></li>
+                <li
+                  data-target="#carousel"
+                  data-slide-to="1"
+                  style="background-image: url('img/slide-2.jpg')"
+                ></li>
+                <li
+                  data-target="#carousel"
+                  data-slide-to="2"
+                  style="background-image: url('img/slide-3.jpg')"
+                ></li>
+              </ol>
+              <a
+                class="carousel-control-prev"
+                href="#carousel"
+                role="button"
+                data-slide="prev"
+              >
+                <img src="img/left-arrow.svg" alt="Prev" />
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carousel"
+                role="button"
+                data-slide="next"
+              >
+                <img src="img/right-arrow.svg" alt="Next" />
+              </a>
+            </div>
+            <div class="carousel-inner">
+              <div
+                class="carousel-item active"
+                style="background-image: url('img/slide-1.jpg')"
+              >
+                <div class="container">
+                  <!-- <h2>I'm Rose</h2>
+            <p>Web Developer</p> -->
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                style="background-image: url('img/slide-2.jpg')"
+              >
+                <div class="container">
+                  <!-- <h2>I'm Jasmine</h2>
+            <p>Web Developer</p> -->
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                style="background-image: url('img/slide-3.jpg')"
+              >
+                <div class="container">
+                  <!-- <h2>I'm Ruby</h2>
+            <p>Web Developer</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FIN CAROUSEL -->
+
+        <!-- Parrafo Accesorios -->
+        <section class="m-3 p-4">
+          <h2
+            class="
+              text-uppercase text-center
+              pb-3
+              wow
+              animate__animated animate__fadeInUp
+            "
+          >
+            Accesorios
+          </h2>
+          <div
+            class="text-start wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <p>
+              Los complementos o accesorios son todas esas piezas que no son
+              parte de las prendas de vestir, pero que se combinan con ellas
+              para completar el atuendo. Estos complementos realzan el estilo,
+              lo hacen más casual o más elegante, y destacan sus atributos. La
+              importancia de los complementos radica en que pueden cambiar
+              totalmente un outfit. Por ejemplo, un mismo vestido puede ser
+              considerado para uso de día o de noche, de acuerdo a los
+              accesorios que lo acompañen.
+            </p>
+            <p>
+              La magia de los accesorios es que no hay que invertir grandes
+              cantidades de dinero en ellos, con muy poco se puede lograr mucho,
+              sólo hay que saber escogerlos y combinarlos de manera creativa.
+              Otro atributo importante de los complementos es que muchos de
+              ellos son atemporales, por lo tanto se pueden usar a través de los
+              años, completando la ropa de cada temporada. Es el caso de las
+              joyas, que son de los accesorios más utilizados, estas piezas son
+              muy versátiles y elegantes.
+            </p>
+          </div>
+        </section>
+
+        <!-- Texto sobre imagen 2 -->
+        <section class="altoParallax">
+          <div class="cont container--full">
+            <div class="content display-3 fw-bold shimmer">
+              <!-- Accesorios <br />  -->
+            </div>
+          </div>
+          <div class="parallax img-fluid indexFoto2"></div>
+        </section>
+
+        <!-- Parrafo Maquillaje Artístico -->
+        <!-- <section class="m-3 p-4">
+          <h2
+            class="
+              text-uppercase text-center
+              pb-3
+              wow
+              animate__animated animate__fadeInUp
+            "
+          >
+            Maquillaje Artístico
+          </h2>
+          <div
+            class="text-start wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <p>
+              Normalmente, se trabaja con unos bocetos previos y se trata de
+              adaptar el dibujo al cuerpo y al rostro. Las técnicas de aerógrafo
+              en esta clase de dibujos, son esenciales para que el trabajo sea
+              aún más perfecto. El maquillaje de fantasía o profesional se
+              diferencia al maquillaje convencional en que en este último, se
+              intenta disimular o dar un toque o un aspecto natural, sin
+              embargo, en el de fantasía o artístico se busca todo lo contrario,
+              se busca realzar y trabajar el surrealismo lo máximo posible,
+              figuras de animales, monstruos, unicornios, dioses…y un sinfín de
+              figuras más propias del cine y del teatro son tratadas con esta
+              clase de maquillaje.
+            </p>
+            <p>
+              Con esta clase de maquillaje, no nos referimos solo a aplicar
+              color con pincel, sino también a extensiones de pelo, de piel, de
+              telas originales y extravagantes que hagan aparentar lo que no se
+              es a diferencia muy notoria del maquillaje natural y convencional.
+            </p>
+          </div>
+        </section> -->
+
+        <!-- Texto sobre imagen 3 -->
+        <!-- <section class="altoParallax">
+          <div class="cont container--full">
+            <div class="content display-3 fw-bold shimmer">
+              Makeup <br />Artístico
+            </div>
+          </div>
+          <div class="parallax img-fluid indexFoto3"></div>
+        </section> -->
+
+        <!-- Parrafo Productos de alta calidad -->
+        <!-- <section class="m-3 p-4">
+          <h2
+            class="
+              text-uppercase text-center
+              pb-3
+              wow
+              animate__animated animate__fadeInUp
+            "
+          >
+            Productos de alta calidad
+          </h2>
+          <p
+            class="text-start wow animate__animated animate__fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            Contamos con líneaa de productos profesionales del mercado nacional
+            e internacional. Tenemos a disposición más de 400 productos, los
+            mejores desarrollos en productos HD y Ultra HD, y una novedosa línea
+            100% certificada cruelty free + sin parabenos que respeta el cuidado
+            de la piel. Marcas de maquillaje profesional a la vanguardia de las
+            últimas tendencias de belleza, nuestra misión es ofrecer productos
+            auténticos, con materiales genuinos de alto rendimiento que cumplan
+            ampliamente el requerimiento de la tecnología 4KCOMPLEX y, los
+            sueños artísticos más exigentes.
+          </p>
+        </section> -->
+
+        <!-- Texto sobre imagen 4 -->
+        <!-- <section class="altoParallax">
+          <div class="cont container--full">
+            <div class="content display-3 fw-bold shimmer">
+              El mejor producto <br />del Mercado
+            </div>
+          </div>
+          <div class="parallax img-fluid indexFoto4"></div>
+        </section> -->
+
+        <!-- Parrafo Spot Pubicitario -->
+        <section class="m-3 p-4">
+          <h2
+            class="
+              text-uppercase text-center
+              pb-3
+              wow
+              animate__animated animate__fadeInUp
+            "
+          >
+            Spot Publicitario
+          </h2>
+        </section>
+
+        <div class="separador"></div>
+        <div class="separador"></div>
+
+        <div class="video-container">
+          <iframe
+            width="300"
+            height="168"
+            src="https://www.youtube.com/embed/cOj8dwOWkGA?autoplay=1&loop=1&mute=1"
+            frameborder="0"
+            allowfullscreen
+            muted
+          ></iframe>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark">
+          <div class="container-fluid">
+            <div class="row p-5 pb-1">
+              <!-- Columna Contacto -->
+              <div class="col-lg-4 col-md-6 col-sm-12 ps-md-5">
+                <p
+                  class="
+                    h6
+                    text-uppercase text-white
+                    fw-bold
+                    mb-3
+                    letterSpacing
+                  "
+                >
+                  Contacto
+                </p>
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="https://www.google.com/maps/place/Caballito,+CABA/@-34.616655,-58.4622398,14z/data=!3m1!4b1!4m5!3m4!1s0x95bcca3911f8ab2d:0x27b394c2f3d87d2d!8m2!3d-34.6159245!4d-58.4406027"
+                    class="text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-house"></i>
+                    Dos Ingleses, Santa Catarina, Brasil
+                  </a>
+                </div>
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="mailto:info@gmail.com"
+                    class="text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-envelope"></i>
+                    Lojadgringa@gmail.com
+                  </a>
+                </div>
+                <div class="mb-4">
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
+                    class="text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-telephone"></i>
+                    +541116235478
+                  </a>
+                </div>
+              </div>
+
+              <!-- Columna Secciones -->
+              <div class="col-lg-4 col-md-6 col-sm-12 ps-lg-5">
+                <p
+                  class="
+                    h6
+                    text-uppercase text-white
+                    fw-bold
+                    mb-3
+                    letterSpacing
+                  "
+                >
+                  Secciones
+                </p>
+                <div class="mb-2 mb-lg-3">
+                  <a href="index.html" class="text-decoration-none textoFooter">
+                    Home
+                  </a>
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="html/nosotros.html"
+                    class="text-decoration-none textoFooter"
+                  >
+                    Nosotros
+                  </a>
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="html/servicios.html"
+                    class="text-decoration-none textoFooter"
+                  >
+                    Indumentaria
+                  </a>
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="html/galeria.html"
+                    class="text-decoration-none textoFooter"
+                  >
+                    Accesorios
+                  </a>
+                </div>
+
+                <div class="mb-4">
+                  <a
+                    href="html/contacto.html"
+                    class="text-decoration-none textoFooter"
+                  >
+                    Contacto
+                  </a>
+                </div>
+              </div>
+
+              <!-- Columna Redes Sociales -->
+              <div class="col-lg-4 col-md-12 col-sm-12 ps-md-5">
+                <p
+                  class="
+                    h6
+                    text-uppercase text-white
+                    fw-bold
+                    mb-4
+                    letterSpacing
+                  "
+                >
+                  Redes Sociales
+                </p>
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="https://www.facebook.com/ɢʀɪɴɢᴀ-sᴛᴏʀᴇ-347902509750612/"
+                    class="me-1 text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-facebook"></i>
+                    Facebook
+                  </a>
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <!-- <a
+                    href="https://twitter.com/?lang=es"
+                    class="me-1 text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-twitter"></i>
+                    Twitter
+                  </a> -->
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <a
+                    href="https://www.instagram.com/gringastorebrasil/"
+                    class="me-1 text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-instagram"></i>
+                    Instagram
+                  </a>
+                </div>
+
+                <div class="mb-2 mb-lg-3">
+                  <!-- <a
+                    href="https://ar.linkedin.com/"
+                    class="me-1 text-decoration-none textoFooter"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="bi bi-linkedin"></i>
+                    Linkedin
+                  </a> -->
+                </div>
+              </div>
+
+              <!-- Copyright -->
+              <div class="col-12 text-center m-3 text-muted">
+                © 2021 Copyright
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- container-fluid -->
+        </footer>
+      </div>
+      <!-- contenidoPrincipal -->
+    </main>
+
+    <!-- Whatsapp -->
+    <a
+      href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
+      class="whatsappWidget wow animate__animated animate__zoomInDown"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-wow-delay="1s"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script animaciones -->
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <!-- Script Parallax -->
+    <script>
+      new universalParallax().init({
+        speed: 8.0,
+      });
+    </script>
+  </body>
+</html>
