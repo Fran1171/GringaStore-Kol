@@ -1089,24 +1089,6 @@ p {
   left: -90px;
 }
 
-/*responsive*/
-@media (max-width: 767px) {
-  .home .carousel-control-next,
-  .home .carousel-control-prev {
-    display: none;
-  }
-  .home .carousel-indicators li {
-    height: 60px;
-    width: 60px;
-  }
-  .home .carousel-item h2 {
-    font-size: 45px;
-  }
-  .home .carousel-item p {
-    font-size: 22px;
-  }
-}
-
 /**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
@@ -1262,6 +1244,21 @@ p {
     width: 100%;
     height: 500px;
   }
+
+  .home .carousel-control-next,
+  .home .carousel-control-prev {
+    display: none;
+  }
+  .home .carousel-indicators li {
+    height: 60px;
+    width: 60px;
+  }
+  .home .carousel-item h2 {
+    font-size: 45px;
+  }
+  .home .carousel-item p {
+    font-size: 22px;
+  }
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
@@ -1308,17 +1305,17 @@ p {
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
-  .mainindumentaria {
+  .mainIndumentaria {
     grid-template-columns: repeat(1, minmax(100px, 599px));
   }
   #imgFounder {
     width: 90%;
     height: auto;
   }
-  .imgEmpleado {
+  /* .imgEmpleado {
     width: 80%;
     height: auto;
-  }
+  } */
   #colFounder {
     width: 90%;
     height: auto;
