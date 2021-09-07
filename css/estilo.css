@@ -50,7 +50,7 @@
 }
 
 /*Ancho y alto*/
-.mainGaleria {
+.mainIndumentaria {
   width: 100%;
   height: auto;
   display: grid;
@@ -943,7 +943,7 @@ p {
 }
 
 /**$*$********************************************************************
-*$*$                         SECCION SERVICIOS                           *
+*$*$                         SECCION ACCESORIOS                          *
 *$*$**********************************************************************/
 .flexServicios,
 .flexCejas,
@@ -1108,34 +1108,13 @@ p {
 }
 
 /**$*$********************************************************************
-*$*$                         SECCION SERVICIOS                           *
-*$*$**********************************************************************/
-.flexServicios,
-.flexCejas,
-.flexUnas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.boxServicios {
-  width: 50%;
-  margin: 1%;
-}
-
-.linkServicios {
-  background-color: #464646;
-  color: white;
-}
-
-.linkServicios:hover {
-  background-color: #2a77d6;
-  color: white;
-}
-
-/**$*$********************************************************************
 *$*$                         SECCION NOSOTROS                            *
 *$*$**********************************************************************/
+
+/* #secNosotros {
+  background: #e6e4e4;
+} */
+
 #colFounder:hover {
   transform: scale(1.03, 1.03);
 }
@@ -1163,7 +1142,7 @@ p {
 }
 
 /**$*$********************************************************************
-*$*$                         SECCION GALERIA                             *
+*$*$                         SECCION INDUMENTARIA                        *
 *$*$**********************************************************************/
 .box {
   width: 100%;
@@ -1208,7 +1187,8 @@ p {
 .containerFormulario {
   width: 70%;
   height: auto;
-  background: url("../images/contacto/imgForm.png") no-repeat center/cover;
+  background: url(https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-gray-shadow-of-the-palm-leaves-on-a-white-wall-image_439098.jpg)
+    no-repeat center/cover;
   border-radius: 6px;
 }
 
@@ -1271,7 +1251,7 @@ p {
 
 /*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
 @media screen and (max-width: 768px) {
-  .mainGaleria {
+  .mainindumentaria {
     grid-template-columns: repeat(2, minmax(350px, 760px));
   }
   #parrafo2Founder,
@@ -1291,7 +1271,7 @@ p {
       center/cover fixed;
   }
   .indexFoto2 {
-    background: url("../images/index/IndexAccesorios.jpg") no-repeat center
+    background: url("../images/index/IndexAccesorios_cel.jpg") no-repeat center
       center/cover fixed;
   }
   .indexFoto3 {
@@ -1328,7 +1308,7 @@ p {
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 599px) {
-  .mainGaleria {
+  .mainindumentaria {
     grid-template-columns: repeat(1, minmax(100px, 599px));
   }
   #imgFounder {
