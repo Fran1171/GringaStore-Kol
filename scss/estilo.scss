@@ -1,512 +1,501 @@
-@import "base/reset";
-@import "base/typo";
-@import "utilities/variables";
-@import "utilities/maps";
-@import "utilities/mixins";
-@import "utilities/extend";
-@import "layout/grid";
-@import "layout/navigations";
-@import "layout/parallaxIndex";
+@import "./base/reset";
+@import "./base/typo";
 
-/**$*$********************************************************************
-*$*$                         ELEMENTOS - TAG                             *
-*$*$**********************************************************************/
-body {
-    font-family: $font-principal;
-    background-color: $fondoBody;
-}
+@import "./utilities/variables";
+@import "./utilities/maps";
+@import "./utilities/mixins";
+@import "./utilities/extend";
 
-h1 {
-    color: $colorH1;
-}
+@import "./pages/home";
+@import "./pages/nosotros";
+@import "./pages/indumentaria";
+@import "./pages/accesorios";
+@import "./pages/contacto";
 
-h2 {
-    color: $colorH2;
-}
+@import "./componentes/header";
+@import "./componentes/global";
+@import "./componentes/footer";
 
-h3 {
-    color: $colorH3;
-}
-
-p {
-    line-height: 1.5;
-    font-size: $font-size-parrafo;
-    font-weight: $font-weight-parrafo;
-}
-
-.separador {
-    @include anchoAlto(100%, auto);
-    margin-top: 30px;
-}
-
-/**$*$********************************************************************
-*$*$             404                                                     *
-*$*$*********************************************************************/
-.error404 {
-    @include anchoAlto(100%, 300px);
-    background: url(../images/404.png) no-repeat center center/cover;
-}
-
-/**$*$********************************************************************
-*$*$             FOOTER                                                  *
-*$*$*********************************************************************/
-.letterSpacing {
-    letter-spacing: 2px;
-}
-
-.textoFooter {
-    line-height: 1.1;
-    color: $colorTextoFooter;
-}
-
-.textoFooter:hover {
-    color: $colorTextoHoverFooter;
-}
-
-// Se usa para lograr el efecto parallax
-// .footerParallax {
-//     transform: scaleY(1.03)
+// /**$*$********************************************************************
+// *$*$                         ELEMENTOS - TAG                             *
+// *$*$**********************************************************************/
+// body {
+//   font-family: $font-principal;
+//   background-color: $fondoBody;
 // }
 
-/**$*$********************************************************************
-*$*$                         BODY INDEX                                  *
-*$*$**********************************************************************/
-.contenidoPrincipal {
-    @include anchoAlto(100%, 900px);
-}
-
-$img:"";
-
-//For para crear dinamicamente 4 clases con los mismo estilos 
-@for $i from 1 to 5 {
-
-    @if $i==1 {
-        $img: $imgIndex1;
-    }
-
-    @else if $i==2 {
-        $img: $imgIndex2;
-    }
-
-    @else if $i==3 {
-        $img: $imgIndex3;
-    }
-
-    @else if $i==4 {
-        $img: $imgIndex4;
-    }
-
-    .indexFoto#{$i} {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        // background: url($img) no-repeat center center/cover fixed;
-        background-image: url($img);
-    }
-
-    .parallax#{$i} {
-        /* can be put in a seperate class for better control */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url($img);
-        /* --------------------------- */
-        position: fixed;
-        width: 100%;
-        top: 0;
-        transform: translate3d(0, 0, 0);
-        transform-style: preserve-3d;
-    }
-
-    .indexFoto#{$i}__Texto1 {
-        color: $colorTextoImgIndex;
-        @extend .estilo1;
-        text-shadow: 0 0 10px #000;
-        font-family: $font-secundario;
-        transition: all 2s;
-    }
-
-}
-
-.altoParallax {
-    min-height: $widthIndexFoto;
-}
-
-.parallax__container {
-    clip: rect(0, auto, auto, 0);
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -100;
-
-    .parallax {
-        /* can be put in a seperate class for better control */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* --------------------------- */
-        position: fixed;
-        width: 100%;
-        top: 0;
-        transform: translate3d(0, 0, 0);
-        transform-style: preserve-3d;
-        opacity: 0.8;
-    }
-
-}
-
-.cont {
-    -webkit-align-items: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 15px;
-    position: relative;
-    width: 100%;
-}
-
-.container--full {
-    height: 100vh;
-}
-
-.cont .content {
-    border-radius: 8px;
-    margin: 0 auto;
-    padding: 30px 35px;
-    text-align: center;
-}
-
-.estiloTexto {
-    text-shadow: 0 0 5px rgba(0, 0, 0, .6);
-    width: 100%;
-    font-size: 40px;
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-// Animacion del texto sobre la imagen
-.shimmer {
-    @extend .estilo1;
-    color: rgba(255, 255, 255, 0.1);
-    //bg-color bg-image bg-repeat bg-position/bg-size
-    background: linear-gradient(to right,
-            #ed8080 0%,
-            #2a77d6 16%,
-            #5eb524 32%,
-            #eacd25 48%,
-            #ed8080 64%,
-            #2a77d6 80%,
-            #5eb524 100%) no-repeat top left/300%;
-
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-
-    animation: shimmer infinite 2s linear;
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: top left;
-    }
-
-    100% {
-        background-position: top right;
-    }
-}
-
-/**$*$********************************************************************
-*$*$                         SECCION SERVICIOS                           *
-*$*$**********************************************************************/
-.flexServicios,
-.flexCejas,
-.flexUnas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxServicios {
-    width: 50%;
-    margin: 1%;
-}
-
-.linkServicios {
-    background-color: $colorLinkServicios;
-    color: white;
-}
-
-.linkServicios:hover {
-    background-color: #2a77d6;
-    color: white;
-}
-
-/**$*$********************************************************************
-*$*$                         SECCION NOSOTROS                            *
-*$*$**********************************************************************/
-#colFounder:hover {
-    transform: scale(1.03, 1.03);
-}
-
-#colResenaFounder {
-    background: $textoFounder;
-}
-
-.empleado:hover {
-    transform: scale(1.03, 1.03);
-}
-
-/**$*$********************************************************************
-*$*$                         SECCION GALERIA                             *
-*$*$**********************************************************************/
-.box {
-    @include anchoAlto(100%, auto);
-    position: relative;
-
-    a {
-        margin: 0;
-        @include anchoAlto(100%, 100%);
-
-        img {
-            @include anchoAlto(100%, 100%);
-            vertical-align: top;
-        }
-
-    }
-}
-
-.overlay {
-    background-color: $fondoOverlayGaleria;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.box a:hover .overlay {
-    display: inline;
-}
-
-.box:hover {
-    transform: scale(1.03, 1.03);
-}
-
-/**$*$********************************************************************
-*$*$                         SECCION CONTACTO                            *
-*$*$**********************************************************************/
-.containerFormulario {
-    @include anchoAlto(70%, auto);
-    // Parametros: bg-color bg-image bg-repeat bg-position/bg-size,
-    background: url($fondoContacto) no-repeat center/cover;
-    border-radius: 6px;
-}
-
-/*Creamos el bucle para usar los valores del mapa*/
-@each $clase,
-$ancho in $width {
-    .#{$clase} {
-        @include anchoAlto($ancho, auto);
-    }
-}
-
-/**$*$********************************************************************
-*$*$                         WIDGET                                      *
-*$*$**********************************************************************/
-.whatsappWidget {
-    position: fixed;
-    @include anchoAlto(60px, 60px);
-    bottom: 40px;
-    right: 40px;
-    background-color: $fondoWhatsapp;
-    color: $iconWhatsapp;
-    border-radius: 40px;
-    text-align: center;
-    font-size: 37px;
-    z-index: 100;
-}
-
-.whatsappWidget:hover {
-    text-decoration: none;
-    background-color: $fondoWhatsapp;
-    color: $iconWhatsapp;
-}
-
-/**$*$********************************************************************
-*$*$                         MEDIA QUERYS                                *
-*$*$**********************************************************************/
-
-/*DISPOSITIVOS XL LARGOS*/
-/* @media screen and (max-width: 1200px) {} */
-
-/*NOTEBOOK + LAP + ESCRITORIO DISPOSITIVOS LARGOS*/
-@media screen and (max-width: 992px) {
-    .containerFormulario {
-        @include anchoAlto(95%, auto);
-    }
-}
-
-/*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
-@media screen and (max-width: 768px) {
-
-    .mainGaleria {
-        grid-template-columns: repeat(2, minmax(350px, 760px));
-    }
-
-    #parrafo2Founder,
-    #parrafo3Founder {
-        display: none;
-    }
-
-    #imgFounder {
-        @include anchoAlto(100%, 500px);
-    }
-
-}
-
-/*TELEFONOS - DISPOSITIVOS XS*/
-@media screen and (max-width: 600px) {
-
-    .indexFoto1 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex1Cel) no-repeat center center/cover fixed;
-    }
-
-    .indexFoto2 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex2Cel) no-repeat center center/cover fixed;
-    }
-
-    .indexFoto3 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex3Cel) no-repeat center center/cover fixed;
-    }
-
-    .indexFoto4 {
-        //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
-        background: url($imgIndex4Cel) no-repeat center center/cover fixed;
-    }
-
-    .containerFormulario {
-        @include anchoAlto(90%, auto);
-    }
-
-    #imgFounder {
-        margin-left: 20px;
-    }
-
-    #parrafo2Founder,
-    #parrafo3Founder {
-        display: block;
-    }
-
-    .flexServicios {
-        flex-direction: column;
-    }
-
-    .flexCejas,
-    .flexUnas {
-        flex-direction: column-reverse;
-    }
-
-    .boxServicios {
-        width: 100%;
-        margin-bottom: 4%;
-    }
-
-}
-
-/*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
-@media screen and (max-width: 599px) {
-
-    .mainGaleria {
-        grid-template-columns: repeat(1, minmax(100px, 599px));
-    }
-
-    #imgFounder {
-        @include anchoAlto(90%, auto);
-    }
-
-    .imgEmpleado {
-        @include anchoAlto(80%, auto);
-    }
-
-    #colFounder {
-        @include anchoAlto(90%, auto);
-    }
-
-    #colResenaFounder {
-        @include anchoAlto(85%, auto);
-
-        h2 {
-            text-align: center;
-        }
-    }
-
-    .logo__img--center {
-        @include anchoAlto(80px, auto);
-    }
-
-    .boxFormulario {
-        @include anchoAlto(90%, auto);
-    }
-
-    .containerFormulario {
-        background: $fondoFormResponsive;
-    }
-
-    .title {
-        top: 50%;
-    }
-
-    .menuSecciones {
-        font-weight: $font-weight-menu;
-        font-size: $font-size-menu;
-        letter-spacing: 1px;
-        margin-left: 30px;
-    }
-
-    .menuSecciones:hover {
-        background-color: transparent;
-    }
-
-    .whatsappWidget {
-        @include anchoAlto(50px, 50px);
-        bottom: 20px;
-        right: 20px;
-        font-size: 33px;
-        z-index: 100;
-    }
-}
-
-/*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
-@media screen and (max-width: 370px) {
-
-    #imgFounder {
-        @include anchoAlto(95%, auto);
-    }
-
-    #colFounder {
-        @include anchoAlto(95%, auto);
-    }
-
-    #colResenaFounder {
-        @include anchoAlto(90%, auto);
-    }
-
-    .imgEmpleado {
-        @include anchoAlto(90%, auto);
-    }
-}
+// h1 {
+//   color: $colorH1;
+// }
+
+// h2 {
+//   color: $colorH2;
+// }
+
+// h3 {
+//   color: $colorH3;
+// }
+
+// p {
+//   line-height: 1.5;
+//   font-size: $font-size-parrafo;
+//   font-weight: $font-weight-parrafo;
+// }
+
+// .separador {
+//   @include anchoAlto(100%, auto);
+//   margin-top: 30px;
+// }
+
+// /**$*$********************************************************************
+// *$*$             404                                                     *
+// *$*$*********************************************************************/
+// .error404 {
+//   @include anchoAlto(100%, 300px);
+//   background: url(../images/404.png) no-repeat center center/cover;
+// }
+
+// /**$*$********************************************************************
+// *$*$             FOOTER                                                  *
+// *$*$*********************************************************************/
+// .letterSpacing {
+//   letter-spacing: 2px;
+// }
+
+// .textoFooter {
+//   line-height: 1.1;
+//   color: $colorTextoFooter;
+// }
+
+// .textoFooter:hover {
+//   color: $colorTextoHoverFooter;
+// }
+
+// /**$*$********************************************************************
+// *$*$                         BODY INDEX                                  *
+// *$*$**********************************************************************/
+// .contenidoPrincipal {
+//   @include anchoAlto(100%, 900px);
+// }
+
+// $img: "";
+
+// //For para crear dinamicamente 4 clases con los mismo estilos
+// @for $i from 1 to 5 {
+//   @if $i==1 {
+//     $img: $imgIndex1;
+//   } @else if $i==2 {
+//     $img: $imgIndex2;
+//   } @else if $i==3 {
+//     $img: $imgIndex3;
+//   } @else if $i==4 {
+//     $img: $imgIndex4;
+//   }
+
+//   .indexFoto#{$i} {
+//     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+//     // background: url($img) no-repeat center center/cover fixed;
+//     background-image: url($img);
+//   }
+
+//   .parallax#{$i} {
+//     /* can be put in a seperate class for better control */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-image: url($img);
+//     /* --------------------------- */
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     transform: translate3d(0, 0, 0);
+//     transform-style: preserve-3d;
+//   }
+
+//   .indexFoto#{$i}__Texto1 {
+//     color: $colorTextoImgIndex;
+//     @extend .estilo1;
+//     text-shadow: 0 0 10px #000;
+//     font-family: $font-secundario;
+//     transition: all 2s;
+//   }
+// }
+
+// .altoParallax {
+//   min-height: $widthIndexFoto;
+// }
+
+// .parallax__container {
+//   clip: rect(0, auto, auto, 0);
+//   overflow: hidden;
+//   height: 100%;
+//   width: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: -100;
+
+//   .parallax {
+//     /* can be put in a seperate class for better control */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     /* --------------------------- */
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     transform: translate3d(0, 0, 0);
+//     transform-style: preserve-3d;
+//     opacity: 0.8;
+//   }
+// }
+
+// .cont {
+//   -webkit-align-items: center;
+//   align-items: center;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-align: center;
+//   -webkit-flex-wrap: wrap;
+//   -ms-flex-wrap: wrap;
+//   flex-wrap: wrap;
+//   margin: 0;
+//   padding: 15px;
+//   position: relative;
+//   width: 100%;
+// }
+
+// .container--full {
+//   height: 100vh;
+// }
+
+// .cont .content {
+//   border-radius: 8px;
+//   margin: 0 auto;
+//   padding: 30px 35px;
+//   text-align: center;
+// }
+
+// .estiloTexto {
+//   text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+//   width: 100%;
+//   font-size: 40px;
+//   font-size: 2.5rem;
+//   font-weight: 700;
+//   line-height: 1;
+// }
+
+// // Animacion del texto sobre la imagen
+// .shimmer {
+//   @extend .estilo1;
+//   color: rgba(255, 255, 255, 0.1);
+//   //bg-color bg-image bg-repeat bg-position/bg-size
+//   background: linear-gradient(
+//       to right,
+//       #ed8080 0%,
+//       #2a77d6 16%,
+//       #5eb524 32%,
+//       #eacd25 48%,
+//       #ed8080 64%,
+//       #2a77d6 80%,
+//       #5eb524 100%
+//     )
+//     no-repeat top left/300%;
+
+//   -webkit-background-clip: text;
+//   -moz-background-clip: text;
+//   background-clip: text;
+
+//   animation: shimmer infinite 2s linear;
+// }
+
+// @keyframes shimmer {
+//   0% {
+//     background-position: top left;
+//   }
+
+//   100% {
+//     background-position: top right;
+//   }
+// }
+
+// /**$*$********************************************************************
+// *$*$                         SECCION ACCESORIOS                          *
+// *$*$**********************************************************************/
+// .flexServicios,
+// .flexCejas,
+// .flexUnas {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .boxServicios {
+//   width: 50%;
+//   margin: 1%;
+// }
+
+// .linkServicios {
+//   background-color: $colorLinkServicios;
+//   color: white;
+// }
+
+// .linkServicios:hover {
+//   background-color: #2a77d6;
+//   color: white;
+// }
+
+// /**$*$********************************************************************
+// *$*$                         SECCION NOSOTROS                            *
+// *$*$**********************************************************************/
+// #colFounder:hover {
+//   transform: scale(1.03, 1.03);
+// }
+
+// #colResenaFounder {
+//   background: $textoFounder;
+// }
+
+// .empleado:hover {
+//   transform: scale(1.03, 1.03);
+// }
+
+// /**$*$********************************************************************
+// *$*$                         SECCION GALERIA                             *
+// *$*$**********************************************************************/
+// .box {
+//   @include anchoAlto(100%, auto);
+//   position: relative;
+
+//   a {
+//     margin: 0;
+//     @include anchoAlto(100%, 100%);
+
+//     img {
+//       @include anchoAlto(100%, 100%);
+//       vertical-align: top;
+//     }
+//   }
+// }
+
+// .overlay {
+//   background-color: $fondoOverlayGaleria;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   top: 0;
+//   display: none;
+//   align-items: center;
+//   justify-content: center;
+//   color: white;
+// }
+
+// .box a:hover .overlay {
+//   display: inline;
+// }
+
+// .box:hover {
+//   transform: scale(1.03, 1.03);
+// }
+
+// /**$*$********************************************************************
+// *$*$                         SECCION CONTACTO                            *
+// *$*$**********************************************************************/
+// .containerFormulario {
+//   @include anchoAlto(70%, auto);
+//   // Parametros: bg-color bg-image bg-repeat bg-position/bg-size,
+//   background: url($fondoContacto) no-repeat center/cover;
+//   border-radius: 6px;
+// }
+
+// /*Creamos el bucle para usar los valores del mapa*/
+// @each $clase, $ancho in $width {
+//   .#{$clase} {
+//     @include anchoAlto($ancho, auto);
+//   }
+// }
+
+// /**$*$********************************************************************
+// *$*$                         WIDGET                                      *
+// *$*$**********************************************************************/
+// .whatsappWidget {
+//   position: fixed;
+//   @include anchoAlto(60px, 60px);
+//   bottom: 40px;
+//   right: 40px;
+//   background-color: $fondoWhatsapp;
+//   color: $iconWhatsapp;
+//   border-radius: 40px;
+//   text-align: center;
+//   font-size: 37px;
+//   z-index: 100;
+// }
+
+// .whatsappWidget:hover {
+//   text-decoration: none;
+//   background-color: $fondoWhatsapp;
+//   color: $iconWhatsapp;
+// }
+
+// /**$*$********************************************************************
+// *$*$                         MEDIA QUERYS                                *
+// *$*$**********************************************************************/
+
+// /*DISPOSITIVOS XL LARGOS*/
+// /* @media screen and (max-width: 1200px) {} */
+
+// /*NOTEBOOK + LAP + ESCRITORIO DISPOSITIVOS LARGOS*/
+// @media screen and (max-width: 992px) {
+//   .containerFormulario {
+//     @include anchoAlto(95%, auto);
+//   }
+// }
+
+// /*TABLET LANDSCAPE UP DISPOSITIVOS MEDIOS*/
+// @media screen and (max-width: 768px) {
+//   .mainGaleria {
+//     grid-template-columns: repeat(2, minmax(350px, 760px));
+//   }
+
+//   #parrafo2Founder,
+//   #parrafo3Founder {
+//     display: none;
+//   }
+
+//   #imgFounder {
+//     @include anchoAlto(100%, 500px);
+//   }
+// }
+
+// /*TELEFONOS - DISPOSITIVOS XS*/
+// @media screen and (max-width: 600px) {
+//   .indexFoto1 {
+//     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+//     background: url($imgIndex1Cel) no-repeat center center/cover fixed;
+//   }
+
+//   .indexFoto2 {
+//     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+//     background: url($imgIndex2Cel) no-repeat center center/cover fixed;
+//   }
+
+//   .indexFoto3 {
+//     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+//     background: url($imgIndex3Cel) no-repeat center center/cover fixed;
+//   }
+
+//   .indexFoto4 {
+//     //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+//     background: url($imgIndex4Cel) no-repeat center center/cover fixed;
+//   }
+
+//   .containerFormulario {
+//     @include anchoAlto(90%, auto);
+//   }
+
+//   #imgFounder {
+//     margin-left: 20px;
+//   }
+
+//   #parrafo2Founder,
+//   #parrafo3Founder {
+//     display: block;
+//   }
+
+//   .flexServicios {
+//     flex-direction: column;
+//   }
+
+//   .flexCejas,
+//   .flexUnas {
+//     flex-direction: column-reverse;
+//   }
+
+//   .boxServicios {
+//     width: 100%;
+//     margin-bottom: 4%;
+//   }
+// }
+
+// /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
+// @media screen and (max-width: 599px) {
+//   .mainGaleria {
+//     grid-template-columns: repeat(1, minmax(100px, 599px));
+//   }
+
+//   #imgFounder {
+//     @include anchoAlto(90%, auto);
+//   }
+
+//   .imgEmpleado {
+//     @include anchoAlto(80%, auto);
+//   }
+
+//   #colFounder {
+//     @include anchoAlto(90%, auto);
+//   }
+
+//   #colResenaFounder {
+//     @include anchoAlto(85%, auto);
+
+//     h2 {
+//       text-align: center;
+//     }
+//   }
+
+//   .logo__img--center {
+//     @include anchoAlto(80px, auto);
+//   }
+
+//   .boxFormulario {
+//     @include anchoAlto(90%, auto);
+//   }
+
+//   .containerFormulario {
+//     background: $fondoFormResponsive;
+//   }
+
+//   .title {
+//     top: 50%;
+//   }
+
+//   .menuSecciones {
+//     font-weight: $font-weight-menu;
+//     font-size: $font-size-menu;
+//     letter-spacing: 1px;
+//     margin-left: 30px;
+//   }
+
+//   .menuSecciones:hover {
+//     background-color: transparent;
+//   }
+
+//   .whatsappWidget {
+//     @include anchoAlto(50px, 50px);
+//     bottom: 20px;
+//     right: 20px;
+//     font-size: 33px;
+//     z-index: 100;
+//   }
+// }
+
+// /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
+// @media screen and (max-width: 370px) {
+//   #imgFounder {
+//     @include anchoAlto(95%, auto);
+//   }
+
+//   #colFounder {
+//     @include anchoAlto(95%, auto);
+//   }
+
+//   #colResenaFounder {
+//     @include anchoAlto(90%, auto);
+//   }
+
+//   .imgEmpleado {
+//     @include anchoAlto(90%, auto);
+//   }
+// }

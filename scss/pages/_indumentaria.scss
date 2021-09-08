@@ -1,0 +1,50 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+/**$*$********************************************************************
+*$*$                         SECCION Indumentaria                        *
+*$*$**********************************************************************/
+.box {
+  @include anchoAlto(100%, auto);
+  position: relative;
+
+  a {
+    margin: 0;
+    @include anchoAlto(100%, 100%);
+
+    img {
+      @include anchoAlto(100%, 100%);
+      vertical-align: top;
+    }
+  }
+}
+
+.overlay {
+  background-color: $fondoOverlayGaleria;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.box a:hover .overlay {
+  display: inline;
+}
+
+.box:hover {
+  transform: scale(1.03, 1.03);
+}
+
+.mainIndumentaria {
+  @include anchoAlto(100%, auto);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0px;
+}

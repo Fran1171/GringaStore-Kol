@@ -1,0 +1,17 @@
+@import "../utilities/variables";
+
+/**$*$********************************************************************
+*$*$             FOOTER                                                  *
+*$*$*********************************************************************/
+.letterSpacing {
+  letter-spacing: 2px;
+}
+
+.textoFooter {
+  line-height: 1.1;
+  color: $colorTextoFooter;
+}
+
+.textoFooter:hover {
+  color: $colorTextoHoverFooter;
+}

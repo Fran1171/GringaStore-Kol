@@ -1,0 +1,27 @@
+@import "../utilities/variables";
+
+/**$*$********************************************************************
+*$*$                         SECCION ACCESORIOS                          *
+*$*$**********************************************************************/
+.flexServicios,
+.flexCejas,
+.flexUnas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxServicios {
+  width: 50%;
+  margin: 1%;
+}
+
+.linkServicios {
+  background-color: $colorLinkServicios;
+  color: white;
+}
+
+.linkServicios:hover {
+  background-color: #2a77d6;
+  color: white;
+}

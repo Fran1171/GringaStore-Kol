@@ -1,0 +1,19 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+/**$*$********************************************************************
+*$*$                         SECCION CONTACTO                            *
+*$*$**********************************************************************/
+.containerFormulario {
+  @include anchoAlto(70%, auto);
+  // Parametros: bg-color bg-image bg-repeat bg-position/bg-size,
+  background: url($fondoContacto) no-repeat center/cover;
+  border-radius: 6px;
+}
+
+/*Creamos el bucle para usar los valores del mapa*/
+@each $clase, $ancho in $width {
+  .#{$clase} {
+    @include anchoAlto($ancho, auto);
+  }
+}

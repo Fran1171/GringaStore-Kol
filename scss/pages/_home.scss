@@ -1,0 +1,293 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+/**$*$********************************************************************
+*$*$    Sección INDEX                                                    *
+*$*$**********************************************************************/
+
+// Body
+.contenidoPrincipal {
+  @include anchoAlto(100%, 900px);
+}
+
+$img: "";
+
+/* For para crear dinamicamente 4 clases con los mismo estilos*/
+/* a modo ejemplo, solo necesitamos 1 */
+@for $i from 1 to 5 {
+  @if $i==1 {
+    $img: $imgIndex1;
+  } @else if $i==2 {
+    $img: $imgIndex2;
+  } @else if $i==3 {
+    $img: $imgIndex3;
+  } @else if $i==4 {
+    $img: $imgIndex4;
+  }
+
+  .indexFoto#{$i} {
+    //bg-color bg-image bg-repeat bg-position/bg-size bg-attachment: ;
+    // background: url($img) no-repeat center center/cover fixed;
+    background-image: url($img);
+  }
+
+  .parallax#{$i} {
+    /* can be put in a seperate class for better control */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url($img);
+    /* --------------------------- */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+  }
+
+  .indexFoto#{$i}__Texto1 {
+    color: $colorTextoImgIndex;
+    @extend .estilo1;
+    text-shadow: 0 0 10px #000;
+    font-family: $font-secundario;
+    transition: all 2s;
+  }
+}
+
+.altoParallax {
+  min-height: $widthIndexFoto;
+}
+
+.parallax__container {
+  clip: rect(0, auto, auto, 0);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+
+  .parallax {
+    /* can be put in a seperate class for better control */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* --------------------------- */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transform: translate3d(0, 0, 0);
+    transform-style: preserve-3d;
+    opacity: 0.8;
+  }
+}
+
+.cont {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.container--full {
+  height: 100vh;
+}
+
+.cont .content {
+  border-radius: 8px;
+  margin: 0 auto;
+  padding: 30px 35px;
+  text-align: center;
+}
+
+.estiloTexto {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  font-size: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/**$*$********************************************************************
+*$*$             CAROUSEL INDEX                                          *
+*$*$*********************************************************************/
+.home .carousel-item {
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.home .carousel-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.home .carousel-item .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.home .carousel-item h2 {
+  font-size: 80px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  opacity: 0;
+}
+.home .carousel-item p {
+  font-size: 30px;
+  margin: 0;
+  color: #eeeeee;
+  opacity: 0;
+}
+.home .carousel-item.active h2 {
+  animation: fadeInLeft 0.5s ease forwards;
+}
+.home .carousel-item.active p {
+  animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.home .carousel-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+
+.home .carousel-indicators {
+  position: relative;
+  margin: 0;
+}
+
+.home .carousel-indicators li {
+  height: 70px;
+  width: 70px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.home .carousel-indicators li.active {
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+.home .carousel-control-next,
+.home .carousel-control-prev {
+  height: 60px;
+  width: 60px;
+  opacity: 1;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover,
+.home .carousel-control-prev:hover {
+  box-shadow: 0 0 10px #ffffff;
+}
+.home .carousel-control-next img,
+.home .carousel-control-prev img {
+  width: 30px;
+}
+.home .carousel-control-next {
+  right: -90px;
+}
+.home .carousel-control-prev {
+  left: -90px;
+}
+
+// Animacion del texto sobre la imagen
+.shimmer {
+  @extend .estilo1;
+  color: rgba(255, 255, 255, 0.1);
+  //bg-color bg-image bg-repeat bg-position/bg-size
+  background: linear-gradient(
+      to right,
+      #ed8080 0%,
+      #2a77d6 16%,
+      #5eb524 32%,
+      #eacd25 48%,
+      #ed8080 64%,
+      #2a77d6 80%,
+      #5eb524 100%
+    )
+    no-repeat top left/300%;
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
+  animation: shimmer infinite 2s linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+// Video Sport Publicitario
+.video-container {
+  position: relative; /* keeps the aspect ratio */
+  padding-bottom: 56.25%; /* fine tunes the video positioning */
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
