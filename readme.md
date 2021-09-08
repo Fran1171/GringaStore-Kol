@@ -3,9 +3,9 @@
 _El sitio se basa en la promoción y venta de indumentaria y accesorios femeninos agregando diversas secciones(Home,Nosotros,Indumentaria,Accesorios,Contacto) para interacción con el usuario._
 
 _Página Home: Es la sección principal del sitio detalla brevemente todo el sitio._
-_Página Nosotros: Descripción de la empresa, se conoce a la fundadora y empleados con una breve descripción._
-_Página Indumentaria: Presenta todas los indumentaria en venta._
-_Página Accesorios: Muestra imágenes de los accesorios en venta._
+_Página Nosotros: Descripción de la empresa y ubicación de la misma._
+_Página Indumentaria: Presenta todas la indumentaria a la venta._
+_Página Accesorios: Muestra imágenes de los accesorios a la venta con texto explicando su importancia._
 _Página Contacto: Brinda un formulario para contacto. Ademas de un icono fijo Whatsapp para mensaje por esa aplicacion._
 
 ## Comenzando 🚀

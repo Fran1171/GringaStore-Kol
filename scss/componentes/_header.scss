@@ -4,18 +4,21 @@
 /**$*$********************************************************************
 *$*$             BARRA NAVEGACION                                        *
 *$*$*********************************************************************/
-.header__bgcolor {
-  background-color: $colorHeaderBackground;
-}
 
-.menuSecciones {
-  letter-spacing: 2px;
-  color: white;
-}
+.header {
+  &__bgcolor {
+    background-color: $colorHeaderBackground;
+  }
 
-.menuSecciones:hover {
-  color: $colorMenuHover;
-  transform: scale(1.1, 1.1);
+  &__menuSecciones {
+    letter-spacing: 2px;
+    color: white;
+
+    &:hover {
+      color: $colorMenuHover;
+      transform: scale(1.1, 1.1);
+    }
+  }
 }
 
 /**$*$********************************************************************

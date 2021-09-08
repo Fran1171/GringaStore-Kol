@@ -581,12 +581,12 @@
 .containerFormulario {
   width: 70%;
   height: auto;
-  background: url("../images/contacto/imgForm") no-repeat center/cover;
+  background: url("../images/contacto/imgForm.png") no-repeat center/cover;
   border-radius: 6px;
 }
 
 /*Creamos el bucle para usar los valores del mapa*/
-.logo__img--center {
+.header__logo {
   width: 35%;
   height: auto;
 }
@@ -623,12 +623,12 @@
   background-color: #11c59c;
 }
 
-.menuSecciones {
+.header__menuSecciones {
   letter-spacing: 2px;
   color: white;
 }
 
-.menuSecciones:hover {
+.header__menuSecciones:hover {
   color: #70f7e0;
   -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
@@ -1888,7 +1888,7 @@ p {
   .mainIndumentaria {
     grid-template-columns: repeat(1, minmax(100px, 599px));
   }
-  .logo__img--center {
+  .header__logo {
     width: 80px;
     height: auto;
   }
@@ -1902,13 +1902,13 @@ p {
   .title {
     top: 50%;
   }
-  .menuSecciones {
+  .header__menuSecciones {
     font-weight: normal;
     font-size: 14px;
     letter-spacing: 1px;
     margin-left: 30px;
   }
-  .menuSecciones:hover {
+  .header__menuSecciones:hover {
     background-color: transparent;
   }
   .whatsappWidget {

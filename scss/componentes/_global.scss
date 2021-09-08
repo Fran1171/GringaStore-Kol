@@ -127,7 +127,7 @@ p {
     grid-template-columns: repeat(1, minmax(100px, 599px));
   }
 
-  .logo__img--center {
+  .header__logo {
     @include anchoAlto(80px, auto);
   }
 
@@ -143,14 +143,14 @@ p {
     top: 50%;
   }
 
-  .menuSecciones {
+  .header__menuSecciones {
     font-weight: $font-weight-menu;
     font-size: $font-size-menu;
     letter-spacing: 1px;
     margin-left: 30px;
   }
 
-  .menuSecciones:hover {
+  .header__menuSecciones:hover {
     background-color: transparent;
   }
 
