@@ -6,7 +6,6 @@
 *$*$**********************************************************************/
 .containerFormulario {
   @include anchoAlto(70%, auto);
-  // Parametros: bg-color bg-image bg-repeat bg-position/bg-size,
   background: url($fondoContacto) no-repeat center/cover;
   border-radius: 6px;
 }
