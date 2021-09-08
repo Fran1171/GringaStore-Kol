@@ -3,15 +3,15 @@
 /**$*$********************************************************************
 *$*$                         SECCION ACCESORIOS                          *
 *$*$**********************************************************************/
-.flexServicios,
-.flexCejas,
-.flexUnas {
+.flexAccesorios,
+.flexCollares,
+.flexTobilleras {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.boxServicios {
+.boxAccesorios {
   width: 50%;
   margin: 1%;
 }

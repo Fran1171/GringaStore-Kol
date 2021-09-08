@@ -84,14 +84,10 @@ $img: "";
 }
 
 .cont {
-  -webkit-align-items: center;
   align-items: center;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0;
   padding: 15px;
@@ -128,41 +124,48 @@ $img: "";
   background-size: cover;
   position: relative;
   z-index: 1;
-}
-.home .carousel-item:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-.home .carousel-item .container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.home .carousel-item h2 {
-  font-size: 80px;
-  color: #ffffff;
-  margin: 0 0 10px;
-  opacity: 0;
-}
-.home .carousel-item p {
-  font-size: 30px;
-  margin: 0;
-  color: #eeeeee;
-  opacity: 0;
-}
-.home .carousel-item.active h2 {
-  animation: fadeInLeft 0.5s ease forwards;
-}
-.home .carousel-item.active p {
-  animation: fadeInRight 0.5s ease forwards;
+
+  & :before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  & .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  & h2 {
+    font-size: 80px;
+    color: #ffffff;
+    margin: 0 0 10px;
+    opacity: 0;
+  }
+
+  & p {
+    font-size: 30px;
+    margin: 0;
+    color: #eeeeee;
+    opacity: 0;
+  }
+
+  & .active {
+    h2 {
+      animation: fadeInLeft 0.5s ease forwards;
+    }
+    p {
+      animation: fadeInRight 0.5s ease forwards;
+    }
+  }
 }
 
 @keyframes fadeInLeft {
@@ -238,40 +241,6 @@ $img: "";
 }
 .home .carousel-control-prev {
   left: -90px;
-}
-
-// Animacion del texto sobre la imagen
-.shimmer {
-  @extend .estilo1;
-  color: rgba(255, 255, 255, 0.1);
-  //bg-color bg-image bg-repeat bg-position/bg-size
-  background: linear-gradient(
-      to right,
-      #ed8080 0%,
-      #2a77d6 16%,
-      #5eb524 32%,
-      #eacd25 48%,
-      #ed8080 64%,
-      #2a77d6 80%,
-      #5eb524 100%
-    )
-    no-repeat top left/300%;
-
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-
-  animation: shimmer infinite 2s linear;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
 }
 
 // Video Sport Publicitario

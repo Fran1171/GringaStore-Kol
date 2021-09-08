@@ -81,15 +81,6 @@ p {
   .mainIndumentaria {
     grid-template-columns: repeat(2, minmax(350px, 760px));
   }
-
-  #parrafo2Founder,
-  #parrafo3Founder {
-    display: none;
-  }
-
-  #imgFounder {
-    @include anchoAlto(100%, 500px);
-  }
 }
 
 /*TELEFONOS - DISPOSITIVOS XS*/
@@ -118,25 +109,16 @@ p {
     @include anchoAlto(90%, auto);
   }
 
-  #imgFounder {
-    margin-left: 20px;
-  }
-
-  #parrafo2Founder,
-  #parrafo3Founder {
-    display: block;
-  }
-
-  .flexServicios {
+  .flexAccesorios {
     flex-direction: column;
   }
 
-  .flexCejas,
-  .flexUnas {
+  .flexCollares,
+  .flexTobilleras {
     flex-direction: column-reverse;
   }
 
-  .boxServicios {
+  .boxAccesorios {
     width: 100%;
     margin-bottom: 4%;
   }
@@ -146,26 +128,6 @@ p {
 @media screen and (max-width: 599px) {
   .mainIndumentaria {
     grid-template-columns: repeat(1, minmax(100px, 599px));
-  }
-
-  #imgFounder {
-    @include anchoAlto(90%, auto);
-  }
-
-  .imgEmpleado {
-    @include anchoAlto(80%, auto);
-  }
-
-  #colFounder {
-    @include anchoAlto(90%, auto);
-  }
-
-  #colResenaFounder {
-    @include anchoAlto(85%, auto);
-
-    h2 {
-      text-align: center;
-    }
   }
 
   .logo__img--center {
@@ -206,19 +168,23 @@ p {
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
 @media screen and (max-width: 370px) {
-  #imgFounder {
-    @include anchoAlto(95%, auto);
+  .whatsappWidget {
+    @include anchoAlto(50px, 50px);
+    bottom: 80px;
+    right: 70px;
+    font-size: 33px;
+    z-index: 100;
   }
-
-  #colFounder {
-    @include anchoAlto(95%, auto);
-  }
-
-  #colResenaFounder {
-    @include anchoAlto(90%, auto);
-  }
-
-  .imgEmpleado {
-    @include anchoAlto(90%, auto);
+}
+/*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS XXSMALLS*/
+@media screen and (max-width: 300px) {
+  .whatsappWidget {
+    @include anchoAlto(50px, 50px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    bottom: 100px;
+    right: 105px;
+    font-size: 33px;
+    z-index: 100;
   }
 }
