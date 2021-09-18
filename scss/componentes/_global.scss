@@ -161,6 +161,10 @@ p {
     font-size: 33px;
     z-index: 100;
   }
+
+  .map-responsive {
+    height: 350px;
+  }
 }
 
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS SMALLS*/
@@ -173,15 +177,29 @@ p {
     z-index: 100;
   }
 }
+
 /*TELEFONOS LANDSCAPE + TABLET VERTICAL DISPOSITIVOS XXSMALLS*/
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 340px) {
   .whatsappWidget {
     @include anchoAlto(50px, 50px);
     margin-top: 10px;
     margin-bottom: 10px;
     bottom: 100px;
-    right: 105px;
+    right: 30px;
     font-size: 33px;
     z-index: 100;
+    width: 50px;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+
+  .map-responsive {
+    height: 300px;
   }
 }
