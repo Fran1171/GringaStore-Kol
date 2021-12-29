@@ -8,7 +8,7 @@
     <!-- SEO - Descripción -->
     <meta
       name="description"
-      content="En Gringa Store Indumentarian estamos atentos a tu inquietudes. Podes contactarte con nosotros vía mail, telefonicamente o a través de nuestas redes sociales"
+      content="En Gringa Store Indumentarian ofrecemos una sección de accesorios las cuales podrán complementar tu estilo de vestimenta"
     />
 
     <!-- SEO - palabras claves -->
@@ -46,11 +46,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!-- Estilo CSS -->
     <link rel="stylesheet" href="../css/estilo.css" />
+
     <!-- Titulo -->
-    <title>Contacto</title>
+    <title>Accesorios Carrito</title>
   </head>
 
   <body>
@@ -126,142 +131,27 @@
             </ul>
           </div>
         </div>
+        <!-- container -->
       </nav>
     </header>
 
     <main>
       <section>
-        <div class="container containerFormulario mt-5">
-          <div class="boxFormulario">
-            <h1
-              class="
-                p-3
-                ps-2
-                text-start
-                h3
-                wow
-                animate__animated animate__fadeIn
-              "
-              data-wow-delay="1s"
-            >
-              Contactate con Nosotros
-            </h1>
+        <h1 class="text-center p-4">Productos Makeup</h1>
 
-            <!-- Formulario -->
-            <form class="ms-2 pb-4 fw-bold">
-              <!-- Nombre y Email -->
-              <div
-                class="
-                  row
-                  d-flex
-                  flex-column flex-md-row flex-lg-row
-                  wow
-                  animate__animated animate__fadeIn
-                "
-                data-wow-delay="0.3s"
-              >
-                <div class="col mb-3">
-                  <label for="nombre" class="form-label">
-                    Nombre Completo
-                  </label>
-                  <input
-                    type="text"
-                    name="nombre"
-                    id="nombre"
-                    class="form-control"
-                    placeholder="Nombre Completo"
-                    required
-                  />
-                </div>
-
-                <div class="col mb-3">
-                  <label for="email" class="form-label">
-                    Direccion de email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    class="form-control"
-                    placeholder="Email"
-                    required
-                  />
-                </div>
-              </div>
-
-              <!-- Asunto - Lista desplegable -->
-              <div
-                class="mb-3 wow animate__animated animate__fadeIn"
-                data-wow-delay="0.3s"
-              >
-                <label for="DataList" class="form-label"> Asunto </label>
-                <input
-                  class="form-control"
-                  list="datalistOptions"
-                  id="DataList"
-                  placeholder="Escriba o elija una opción"
-                />
-                <datalist id="datalistOptions">
-                  <option value="Idumentaria"></option>
-                  <option value="Makeup"></option>
-                  <option value="Otros"></option>
-                </datalist>
-              </div>
-
-              <!-- Mensaje -->
-              <div
-                class="mb-3 wow animate__animated animate__fadeIn"
-                data-wow-delay="0.4s"
-              >
-                <label for="FormControlTextarea1" class="form-label">
-                  Mensaje
-                </label>
-                <textarea
-                  class="form-control"
-                  id="FormControlTextarea1"
-                  rows="3"
-                  placeholder="Mensaje"
-                ></textarea>
-              </div>
-
-              <!-- Newsletter -->
-              <div
-                class="form-check mb-3 wow animate__animated animate__fadeIn"
-                data-wow-delay="0.5s"
-              >
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckChecked"
-                />
-                <label class="form-check-label" for="flexCheckChecked">
-                  ¿Desea recibir Newsletter?
-                </label>
-              </div>
-
-              <!-- Botones -->
-              <div
-                class="
-                  d-grid
-                  gap-2
-                  d-md-block
-                  wow
-                  animate__animated animate__fadeIn
-                "
-                data-wow-delay="0.6s"
-              >
-                <button type="submit" class="btn btn-dark fw-bold">
-                  Enviar
-                </button>
-
-                <button type="reset" class="btn btn-dark fw-bold">Reset</button>
-              </div>
-            </form>
-          </div>
-          <!-- boxFormulario-->
+        <!-- Listado de Productos -->
+        <div class="container-sm container-md container-lg">
+          <div
+            id="mainServicioMakeup"
+            class="
+              row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3
+              g-2 g-lg-3 g-md-3 g-sm-2
+              ms-md-5
+            "
+          ></div>
+          <!-- mainServicioMakeup -->
         </div>
-        <!-- container -->
+        <!-- container-->
       </section>
     </main>
 
@@ -401,7 +291,7 @@
 
     <!-- Whatsapp -->
     <a
-      href="https://api.whatsapp.com/send?phone=5411618107&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
+      href="https://api.whatsapp.com/send?phone=5411111117&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Makeup."
       class="whatsappWidget"
       target="_blank"
       rel="noopener noreferrer"
@@ -417,7 +307,7 @@
     ></script>
 
     <!-- Script animaciones -->
-    <script src="js/wow.min.js"></script>
+    <script src="../js/wow.min.js"></script>
     <script>
       new WOW().init();
     </script>
