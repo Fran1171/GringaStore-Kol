@@ -85,52 +85,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Menu listado de opciones -->
-          <div class="collapse navbar-collapse pe-5" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a
-                  class="nav-link fst-italic header__menuSecciones"
-                  href="../index.html"
-                >
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fst-italic header__menuSecciones"
-                  href="../html/nosotros.html"
-                >
-                  Nosotros
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fst-italic header__menuSecciones"
-                  href="../html/indumentaria.html"
-                >
-                  Indumentaria
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fst-italic header__menuSecciones"
-                  href="../html/accesorios.html"
-                >
-                  Accesorios
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fst-italic header__menuSecciones"
-                  href="../html/contacto.html"
-                >
-                  Contacto
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+                         <!-- Menu listado de opciones -->
+                         <div class="collapse navbar-collapse pe-5" id="navbarNav">
+                          <ul id="menuHeader" class="navbar-nav ms-auto">
+      
+                          </ul>
+                      </div>
         <!-- container -->
       </nav>
     </header>
@@ -154,6 +114,27 @@
         <!-- container-->
       </section>
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-lg modal-sm modal-dialog-scrollable">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <!-- Detalle de items en modal carrito -->
+              <div id="detalleCarrito" class="modal-body container-sm .container-md .container-lg">
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                  <button id="comprar" type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                      Iniciar Compra
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
 
     <div class="separador"></div>
 
@@ -288,6 +269,12 @@
         </div>
       </div>
     </footer>
+
+    <!-- Carrito de compras -->
+    <span id="count" class="contador">0</span>
+    <a id="idCarrito" href="#" class="shoppingCartWidget" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="bi bi-cart4"></i>
+    </a>
 
     <!-- Whatsapp -->
     <a

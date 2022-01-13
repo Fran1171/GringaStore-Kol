@@ -88,10 +88,10 @@ class mainApp {
     if (pagina === "INDEX" || pagina === "") {
       secciones = seccionesIndex;
       clasesMenu =
-        "nav-link fw-bold text-uppercase menuSecciones wow animate__animated animate__bounceInDown";
+        "nav-link fst-italic header__menuSecciones wow animate__animated animate__bounceInDown";
     } else {
       secciones = seccionesOtras;
-      clasesMenu = "nav-link fw-bold text-uppercase menuSecciones";
+      clasesMenu = "nav-link fst-italic header__menuSecciones";
     }
 
     // Crea el menu del Sitio
@@ -292,6 +292,8 @@ function eventHandlerAddItemToShoppingCart(event) {
 
     if (cant > producto.stock) {
       throw Error("Cantidad ingresada supera al stock");
+    } else {
+      producto.stock = producto.stock - cant;
     }
 
     // Si ya existe el producto en el carrito suma la cantidad
@@ -318,7 +320,8 @@ function eventHandlerAddItemToShoppingCart(event) {
         producto.nombre,
         cant,
         producto.precio,
-        producto.imagen
+        producto.imagen,
+        producto.stock
       );
       crudCarrito.create(itemCarrito);
     }
@@ -328,6 +331,9 @@ function eventHandlerAddItemToShoppingCart(event) {
 
     // Actualiza la cantidad del carrito de compras clickeado al valor default 1
     $(`#idCant-${idProducto}`).val("1");
+
+    // Actualiza la cantidad del stock tras agregar items al carrito
+    $("#stock").text(`${crudCarrito.carrito.stock}`);
 
     // Mensaje de Exito al agregar al carrito
     $(`#success-addToShoppingCart-alert-${idProducto}`)

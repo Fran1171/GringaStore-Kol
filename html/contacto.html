@@ -134,14 +134,7 @@
         <div class="container containerFormulario mt-5">
           <div class="boxFormulario">
             <h1
-              class="
-                p-3
-                ps-2
-                text-start
-                h3
-                wow
-                animate__animated animate__fadeIn
-              "
+              class="p-3 ps-2 text-start h3 wow animate__animated animate__fadeIn"
               data-wow-delay="1s"
             >
               Contactate con Nosotros
@@ -151,13 +144,7 @@
             <form class="ms-2 pb-4 fw-bold">
               <!-- Nombre y Email -->
               <div
-                class="
-                  row
-                  d-flex
-                  flex-column flex-md-row flex-lg-row
-                  wow
-                  animate__animated animate__fadeIn
-                "
+                class="row d-flex flex-column flex-md-row flex-lg-row wow animate__animated animate__fadeIn"
                 data-wow-delay="0.3s"
               >
                 <div class="col mb-3">
@@ -242,13 +229,7 @@
 
               <!-- Botones -->
               <div
-                class="
-                  d-grid
-                  gap-2
-                  d-md-block
-                  wow
-                  animate__animated animate__fadeIn
-                "
+                class="d-grid gap-2 d-md-block wow animate__animated animate__fadeIn"
                 data-wow-delay="0.6s"
               >
                 <button type="submit" class="btn btn-dark fw-bold">
@@ -264,6 +245,55 @@
         <!-- container -->
       </section>
     </main>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-lg modal-sm modal-dialog-scrollable"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Carrito de Compras
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Detalle de items en modal carrito -->
+          <div
+            id="detalleCarrito"
+            class="modal-body container-sm .container-md .container-lg"
+          ></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Salir
+            </button>
+            <button
+              id="comprar"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Iniciar Compra
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="separador"></div>
 
@@ -398,6 +428,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Carrito de compras -->
+    <span id="count" class="contador">0</span>
+    <a
+      id="idCarrito"
+      href="#"
+      class="shoppingCartWidget"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      <i class="bi bi-cart4"></i>
+    </a>
 
     <!-- Whatsapp -->
     <a
