@@ -3,6 +3,7 @@ import { Contacto, contactoService } from "./contacto.js";
 import { Carrito, carritoService } from "./carrito.js";
 
 // Guarda los productos en memoria al hacer el primer Get
+let globalProductos_ini = [];
 let globalProductos = [];
 
 class mainApp {
@@ -117,9 +118,17 @@ class mainApp {
     $.getJSON(URL_JSON_SERVER_GITHUB_GET, function (respuesta, estado) {
       if (estado === "success") {
         const productos = respuesta;
+
+        // if (globalProductos_ini.length === 0) {
+        // globalProductos_ini = respuesta;
+        //}
+        globalProductos_ini = productos;
         globalProductos = respuesta;
 
         for (const producto of productos) {
+          // Generamos un ID para el actualizar el texto del Stock tras agregar al carrito
+          let stockid = `${producto.id}`.slice(-3);
+
           $("#mainServicioMakeup").append(`
 
                         <div class="col">
@@ -154,7 +163,7 @@ class mainApp {
                                             class="p-2 w-75 text-muted tex-center border border-secondary">
                                     </div>
 
-                                    <div class="h6 text-muted">
+                                    <div id= "${stockid}" class="h6 text-muted" >
                                         ${producto.stock} disponibles
                                     </div>
 
@@ -309,7 +318,8 @@ function eventHandlerAddItemToShoppingCart(event) {
         producto.nombre,
         itemProducto.cantidad,
         producto.precio,
-        producto.imagen
+        producto.imagen,
+        producto.stock
       );
       crudCarrito.update(itemCarrito);
     }
@@ -333,7 +343,8 @@ function eventHandlerAddItemToShoppingCart(event) {
     $(`#idCant-${idProducto}`).val("1");
 
     // Actualiza la cantidad del stock tras agregar items al carrito
-    $("#stock").text(`${crudCarrito.carrito.stock}`);
+    let stid = `${producto.id}`.slice(-3);
+    $(`#${stid}`).text(`${producto.stock} disponibles`);
 
     // Mensaje de Exito al agregar al carrito
     $(`#success-addToShoppingCart-alert-${idProducto}`)
@@ -569,6 +580,12 @@ function buildItemsInShoppingCart() {
       let idMinusPlus = $(this).attr("id");
       const id = idMinusPlus.split("-");
 
+      // Datos globales originales, tal como viene en el JSON
+      const item1 = globalProductos_ini.find(
+        (producto) => producto.id === parseInt(id[1])
+      );
+
+      // Datos globales variables
       const item = globalProductos.find(
         (producto) => producto.id === parseInt(id[1])
       );
@@ -580,6 +597,14 @@ function buildItemsInShoppingCart() {
       const crudCarrito = new carritoService(carritoLocalStorage, localStorage);
 
       item.cantidad = qty;
+
+      // Actualizo el stock
+      //item.stock = item1.stock - item.cantidad;
+
+      // Actualiza la cantidad del stock tras agregar items al carrito
+      let stid = `${item.id}`.slice(-3);
+      $(`#${stid}`).text(`${item.stock} disponibles`);
+
       crudCarrito.update(item);
       buildItemsInShoppingCart();
     });
